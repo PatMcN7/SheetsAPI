@@ -6,8 +6,12 @@ scope =["https://spreadsheets.google.com/feeds",'https://www.googleapis.com/auth
 creds = ServiceAccountCredentials.from_json_keyfile_name('creds.json', scope)
 
 client = gspread.authorize(creds)
+scatteredSheet = client.open('scattered logistics')
+worksheetZero = scatteredSheet.get_worksheet(0)
+worksheetThree = scatteredSheet.get_worksheet(3)
+bruh = client.open('BRUHHHHHHHHHHHHHHHHHHHH').sheet1
 
-scatterdSheet = client.open('scattered logistics').sheet1
+
 
 
 theempireofnewsuslandSheet = client.open('theempireofnewsusland').sheet1
@@ -23,27 +27,22 @@ thenotoriusjigglybuttgangSheet = client.open('Thenotoriusjgglybuttgang').sheet1
 brazilSheet = client.open('Brazil').sheet1
 bigboisSheet = client.open('Bigbois').sheet1
 pwndaSheet = client.open('Pwnda').sheet1
-'''
-def bruh():
-    bruhData = bruhSheet.get_all_records()
-    print(bruhData)
-bruh()
-'''
+
 def readWrite():
-    theempireofnewsuslandTroops = scatterdSheet.cell(2, 6).value
-    RhomaiontawantinsuyuTroops= scatterdSheet.cell(3, 6).value
-    EgyptTroops = scatterdSheet.cell(4, 6).value
-    CanadaLandTroops = scatterdSheet.cell(5, 6).value
-    FanslarviaTroops= scatterdSheet.cell(6, 6).value
-    yaRtheczarTroops = scatterdSheet.cell(7, 6).value
-    FiveStarTroops = scatterdSheet.cell(8, 6).value
-    AndrewdumoTroops = scatterdSheet.cell(9, 6).value
-    MrsFrizzleTroops = scatterdSheet.cell(10, 6).value
-    ThenotoriusJigglybuttgangTroops = scatterdSheet.cell(11, 6).value
-    BrazilTroops = scatterdSheet.cell(12, 6).value
-    BigboisTroops = scatterdSheet.cell(13, 6).value
-    PwndaTroops = scatterdSheet.cell(14, 6).value
-    print(theempireofnewsuslandTroops, RhomaiontawantinsuyuTroops, EgyptTroops, CanadaLandTroops, FanslarviaTroops, yaRtheczarTroops, FiveStarTroops, AndrewdumoTroops, MrsFrizzleTroops, ThenotoriusJigglybuttgangTroops, BrazilTroops, BigboisTroops, PwndaTroops)
+    theempireofnewsuslandTroops = worksheetZero.cell(2, 6).value
+    RhomaiontawantinsuyuTroops= worksheetZero.cell(3, 6).value
+    EgyptTroops = worksheetZero.cell(4, 6).value
+    CanadaLandTroops = worksheetZero.cell(5, 6).value
+    FanslarviaTroops= worksheetZero.cell(6, 6).value
+    yaRtheczarTroops = worksheetZero.cell(7, 6).value
+    FiveStarTroops = worksheetZero.cell(8, 6).value
+    AndrewdumoTroops = worksheetZero.cell(9, 6).value
+    MrsFrizzleTroops = worksheetZero.cell(10, 6).value
+    ThenotoriusJigglybuttgangTroops = worksheetZero.cell(11, 6).value
+    BrazilTroops = worksheetZero.cell(12, 6).value
+    BigboisTroops = worksheetZero.cell(13, 6).value
+    PwndaTroops = worksheetZero.cell(14, 6).value
+    #print(theempireofnewsuslandTroops, RhomaiontawantinsuyuTroops, EgyptTroops, CanadaLandTroops, FanslarviaTroops, yaRtheczarTroops, FiveStarTroops, AndrewdumoTroops, MrsFrizzleTroops, ThenotoriusJigglybuttgangTroops, BrazilTroops, BigboisTroops, PwndaTroops)
     theempireofnewsuslandSheet.update_cell(1,1, theempireofnewsuslandTroops)
     rhomaiontawantinsuyuSheet.update_cell(1,1, RhomaiontawantinsuyuTroops)
     egyptSheet.update_cell(1,1, EgyptTroops)
@@ -57,12 +56,18 @@ def readWrite():
     brazilSheet.update_cell(1,1, BrazilTroops)
     bigboisSheet.update_cell(1,1, BigboisTroops)
     pwndaSheet.update_cell(1,1, PwndaTroops)
-    print('done')
+    print('Troop Knowledge Call Complete')
 
 
 readWrite()
+
+def Bruh():
+  testRecords = worksheetThree.get_all_values()
+  bruh.update('A1', testRecords)
+  print('Bruh Call omplete')
+
+Bruh()
 while True:
     readWrite()
-    print('called')
-    time.sleep(7200)
-
+    bruh()
+    time.sleep(15)
