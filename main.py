@@ -12,8 +12,6 @@ worksheetThree = scatteredSheet.get_worksheet(3)
 bruh = client.open('BRUHHHHHHHHHHHHHHHHHHHH').sheet1
 
 
-
-
 theempireofnewsuslandSheet = client.open('theempireofnewsusland').sheet1
 rhomaiontawantinsuyuSheet = client.open('Rhomaiontawantinsuyu').sheet1
 egyptSheet = client.open('Egypt').sheet1
@@ -29,45 +27,43 @@ bigboisSheet = client.open('Bigbois').sheet1
 pwndaSheet = client.open('Pwnda').sheet1
 
 def readWrite():
-    theempireofnewsuslandTroops = worksheetZero.cell(2, 6).value
-    RhomaiontawantinsuyuTroops= worksheetZero.cell(3, 6).value
-    EgyptTroops = worksheetZero.cell(4, 6).value
-    CanadaLandTroops = worksheetZero.cell(5, 6).value
-    FanslarviaTroops= worksheetZero.cell(6, 6).value
-    yaRtheczarTroops = worksheetZero.cell(7, 6).value
-    FiveStarTroops = worksheetZero.cell(8, 6).value
-    AndrewdumoTroops = worksheetZero.cell(9, 6).value
-    MrsFrizzleTroops = worksheetZero.cell(10, 6).value
-    ThenotoriusJigglybuttgangTroops = worksheetZero.cell(11, 6).value
-    BrazilTroops = worksheetZero.cell(12, 6).value
-    BigboisTroops = worksheetZero.cell(13, 6).value
-    PwndaTroops = worksheetZero.cell(14, 6).value
+    theempireofnewsuslandTroops = worksheetZero.get('J2:K2')
+    RhomaiontawantinsuyuTroops= worksheetZero.get('J3:K4')
+    EgyptTroops = worksheetZero.get('J4:K4')
+    CanadaLandTroops = worksheetZero.get('J5:K5')
+    FanslarviaTroops= worksheetZero.get('J6:K6')
+    yaRtheczarTroops = worksheetZero.get('J7:K7')
+    FiveStarTroops = worksheetZero.get('J8:K8')
+    AndrewdumoTroops = worksheetZero.get('J9:K9')
+    MrsFrizzleTroops = worksheetZero.get('J10:K10')
+    ThenotoriusJigglybuttgangTroops = worksheetZero.get('J11:K11')
+    BrazilTroops = worksheetZero.get('J12:K12')
+    BigboisTroops = worksheetZero.get('J13:K13')
+    PwndaTroops = worksheetZero.get('J14:K14')
     #print(theempireofnewsuslandTroops, RhomaiontawantinsuyuTroops, EgyptTroops, CanadaLandTroops, FanslarviaTroops, yaRtheczarTroops, FiveStarTroops, AndrewdumoTroops, MrsFrizzleTroops, ThenotoriusJigglybuttgangTroops, BrazilTroops, BigboisTroops, PwndaTroops)
-    theempireofnewsuslandSheet.update_cell(1,1, theempireofnewsuslandTroops)
-    rhomaiontawantinsuyuSheet.update_cell(1,1, RhomaiontawantinsuyuTroops)
-    egyptSheet.update_cell(1,1, EgyptTroops)
-    canadalandSheet.update_cell(1,1, CanadaLandTroops)
-    fanslarviaSheet.update_cell(1,1, FanslarviaTroops)
-    yartheczarSheet.update_cell(1,1, yaRtheczarTroops)
-    fivestarSheet.update_cell(1,1, FiveStarTroops)
-    andrewdumoSheet.update_cell(1,1, AndrewdumoTroops)
-    mrsfrizzleSheet.update_cell(1,1, MrsFrizzleTroops)
-    thenotoriusjigglybuttgangSheet.update_cell(1,1, ThenotoriusJigglybuttgangTroops)
-    brazilSheet.update_cell(1,1, BrazilTroops)
-    bigboisSheet.update_cell(1,1, BigboisTroops)
-    pwndaSheet.update_cell(1,1, PwndaTroops)
-    print('Troop Knowledge Call Complete')
+    theempireofnewsuslandSheet.update('A1', theempireofnewsuslandTroops)
+    rhomaiontawantinsuyuSheet.update('A1', RhomaiontawantinsuyuTroops)
+    egyptSheet.update('A1', EgyptTroops)
+    canadalandSheet.update('A1', CanadaLandTroops)
+    fanslarviaSheet.update('A1', FanslarviaTroops)
+    yartheczarSheet.update('A1', yaRtheczarTroops)
+    fivestarSheet.update('A1', FiveStarTroops)
+    andrewdumoSheet.update('A1', AndrewdumoTroops)
+    mrsfrizzleSheet.update('A1', MrsFrizzleTroops)
+    thenotoriusjigglybuttgangSheet.update('A1', ThenotoriusJigglybuttgangTroops)
+    brazilSheet.update('A1', BrazilTroops)
+    bigboisSheet.update('A1', BigboisTroops)
+    pwndaSheet.update('A1', PwndaTroops)
+    print('Troop and Knowledge Call Complete')
 
 
-readWrite()
 
 def Bruh():
-  testRecords = worksheetThree.get_all_values()
-  bruh.update('A1', testRecords)
-  print('Bruh Call omplete')
+  bruhRecords = worksheetThree.get_all_values()
+  bruh.update('A1', bruhRecords)
+  print('Bruh Call complete')
 
 Bruh()
 while True:
     readWrite()
-    bruh()
-    time.sleep(15)
+    Bruh()
